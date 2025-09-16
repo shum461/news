@@ -1,5 +1,10 @@
 library(httr2)
 
+# Create data directory if it doesn't exist
+if (!dir.exists("data")) {
+  dir.create("data", recursive = TRUE)
+}
+
 req <- request("https://newsapi.org/v2/everything") |>
   req_url_query(
     q = '`"data science"`',
